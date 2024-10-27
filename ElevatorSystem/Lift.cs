@@ -19,9 +19,9 @@ namespace ElevatorSystem
         public Timer LiftTimerUp;
         public Timer LiftTimerDown;
 
-        public Lift(PictureBox Elevator, Button btn_1, Button btn_G, int formSize, int liftSpeed, Timer liftTimerUp, Timer liftTimerDown)
+        public Lift(PictureBox mainElevator, Button btn_1, Button btn_G, int formSize, int liftSpeed, Timer liftTimerUp, Timer liftTimerDown)
         {
-            Elevator = Elevator;
+            Elevator = mainElevator;
             btnUp = btn_1;
             btnDown = btn_G;
             FormSize = formSize;
