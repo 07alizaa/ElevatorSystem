@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DBContext.cs" />
+    <Compile Include="EmergencyAlarm.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -32,7 +32,6 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.DeleteLog = new System.Windows.Forms.Button();
             this.doorTime = new System.Windows.Forms.Timer(this.components);
-            this.LiftTime = new System.Windows.Forms.Timer(this.components);
             this.doorRightU = new System.Windows.Forms.PictureBox();
             this.doorLeftU = new System.Windows.Forms.PictureBox();
             this.doorRightG = new System.Windows.Forms.PictureBox();
@@ -43,8 +42,8 @@
             this.btnUp = new System.Windows.Forms.Button();
             this.Elevator = new System.Windows.Forms.PictureBox();
             this.liftPanel = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.EmergencyAlarm = new System.Windows.Forms.Button();
+            this.LiftTime = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.doorRightU)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.doorLeftU)).BeginInit();
@@ -78,10 +77,6 @@
             // doorTime
             // 
             this.doorTime.Tick += new System.EventHandler(this.door_timer_Tick);
-            // 
-            // LiftTime
-            // 
-            this.LiftTime.Tick += new System.EventHandler(this.lifttimer_Tick);
             // 
             // doorRightU
             // 
@@ -175,6 +170,7 @@
             // Elevator
             // 
             this.Elevator.BackgroundImage = global::ElevatorSystem.Properties.Resources.Forms_Surfaces__Lemon_Tree_Premier__Mumbai_International_Airport__1_;
+            this.Elevator.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Elevator.Location = new System.Drawing.Point(185, 486);
             this.Elevator.Name = "Elevator";
             this.Elevator.Size = new System.Drawing.Size(254, 277);
@@ -191,33 +187,27 @@
             this.liftPanel.TabIndex = 0;
             this.liftPanel.TabStop = false;
             // 
-            // label1
+            // EmergencyAlarm
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Maroon;
-            this.label1.Location = new System.Drawing.Point(212, 412);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 25);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "label1";
+            this.EmergencyAlarm.Location = new System.Drawing.Point(568, 558);
+            this.EmergencyAlarm.Name = "EmergencyAlarm";
+            this.EmergencyAlarm.Size = new System.Drawing.Size(119, 49);
+            this.EmergencyAlarm.TabIndex = 14;
+            this.EmergencyAlarm.Text = "button1";
+            this.EmergencyAlarm.UseVisualStyleBackColor = true;
+            this.EmergencyAlarm.Click += new System.EventHandler(this.EmergencyAlarm_Click);
             // 
-            // label2
+            // LiftTime
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.DarkRed;
-            this.label2.Location = new System.Drawing.Point(288, 412);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(70, 25);
-            this.label2.TabIndex = 13;
-            this.label2.Text = "label2";
+            this.LiftTime.Interval = 50;
+            this.LiftTime.Tick += new System.EventHandler(this.lifttimer_Tick);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1717, 775);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.EmergencyAlarm);
             this.Controls.Add(this.DeleteLog);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.doorRightU);
@@ -240,7 +230,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.Elevator)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.liftPanel)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -259,9 +248,8 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button DeleteLog;
         private System.Windows.Forms.Timer doorTime;
+        private System.Windows.Forms.Button EmergencyAlarm;
         private System.Windows.Forms.Timer LiftTime;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
     }
 }
 

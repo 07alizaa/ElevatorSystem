@@ -6,7 +6,17 @@ using System.Threading.Tasks;
 
 namespace ElevatorSystem
 {
-    internal class IdleState
+    internal class IdleState : ILiftState
     {
+        public void MovingDown(Lift lift)
+        {
+
+        }
+        public void MovingUp(Lift lift)
+        {
+
+        }
+
     }
+   
 }

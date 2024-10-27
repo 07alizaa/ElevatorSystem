@@ -12,6 +12,7 @@ namespace ElevatorSystem
 {
     public partial class Form1 : Form
     {
+        private readonly EmergencyAlarm _emergencyAlarm;
         bool isMovingUp = false;
         bool isMovingDown = false;
         int liftSpeed = 10;
@@ -21,6 +22,8 @@ namespace ElevatorSystem
 
         int doorMaxOpenWidth;
         int doorMaxCLoseWidth;
+        string alarmSoundPath = @"C:\Users\simkh\Downloads\mixkit-vintage-warning-alarm-990.wav";
+
 
         DataTable dt = new DataTable();
         DBContext db = new DBContext();  
@@ -29,6 +32,7 @@ namespace ElevatorSystem
             InitializeComponent();
             doorMaxOpenWidth = Elevator.Width / 2 -50;
             doorMaxCLoseWidth = Elevator.Width / 2;
+            _emergencyAlarm = new EmergencyAlarm(alarmSoundPath);
             dataGridView1.ColumnCount = 2;
             dataGridView1.Columns[0].Name = "Time";
             dataGridView1.Columns[1].Name = "Events";
@@ -184,6 +188,19 @@ namespace ElevatorSystem
         {
             db.DeleteLogFromDB(dt);  // Ensure DeleteLogFromDB exists in DBClass
             dataGridView1.Rows.Clear();
+        }
+
+        private void EmergencyAlarm_Click(object sender, EventArgs e)
+        {
+            if (!_emergencyAlarm.IsActive)
+            {
+                _emergencyAlarm.Activate();
+            }
+            else
+            {
+                _emergencyAlarm.Deactivate();
+            }
+
         }
     }
 }
