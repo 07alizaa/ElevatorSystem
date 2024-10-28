@@ -135,5 +135,38 @@
   <ItemGroup>
     <None Include="Resources\Forms+Surfaces_ Lemon Tree Premier, Mumbai International Airport %281%29.jpeg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pannel1.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\siren.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pannel2.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lifdoor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\left1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Elevator room2.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UpButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UpButton-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Downbtn-removebg-preview.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

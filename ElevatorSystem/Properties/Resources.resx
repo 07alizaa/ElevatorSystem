@@ -121,8 +121,8 @@
   <data name="Door11" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Door11.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Close_btn" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Close_btn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="left" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\left.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Door13" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Door13.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -142,8 +142,23 @@
   <data name="Down_Btn1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Down_Btn1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="UpButton-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\UpButton-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="lifdoor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lifdoor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Door1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Door1.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Close_btn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Close_btn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Forms+Surfaces_ Lemon Tree Premier, Mumbai International Airport (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Forms+Surfaces_ Lemon Tree Premier, Mumbai International Airport (1).jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Right" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Right.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="LiftPannel" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LiftPannel.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -157,13 +172,31 @@
   <data name="Open_btn" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Open_btn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Pannel1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Pannel1.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Pannel" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Pannel.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="siren" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\siren.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Pannel2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Pannel2.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="left1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\left1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Elevator room2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Elevator room2.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="UpButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\UpButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="UP_Button" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\UP_Button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Forms+Surfaces_ Lemon Tree Premier, Mumbai International Airport (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Forms+Surfaces_ Lemon Tree Premier, Mumbai International Airport (1).jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Downbtn-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Downbtn-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

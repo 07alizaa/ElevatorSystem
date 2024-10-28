@@ -19,6 +19,7 @@ namespace ElevatorSystem
         bool isClosing = false;
         bool isOpening = false;
         int doorSpeed = 10;
+       // private int maxLiftHeight = 100;
 
         int doorMaxOpenWidth;
         int doorMaxCLoseWidth;
@@ -118,7 +119,7 @@ namespace ElevatorSystem
                 // When the elevator is not on the top floor
                 if (isOpening)
                 {
-                    if (doorLeftG.Left > doorMaxOpenWidth+40)
+                    if (doorLeftG.Left > doorMaxOpenWidth+20)
                     {
                         doorLeftG.Left -= doorSpeed;
                         doorRightG.Left += doorSpeed;
@@ -132,7 +133,7 @@ namespace ElevatorSystem
                 }
                 if (isClosing)
                 {
-                    if (doorLeftG.Left < Elevator.Width +  doorMaxOpenWidth/2 - 50)  // Adjusted condition for closing
+                    if (doorLeftG.Left < Elevator.Width +  doorMaxOpenWidth/2 - 60)  // Adjusted condition for closing
                     {
                         doorLeftG.Left += doorSpeed;
                         doorRightG.Left -= doorSpeed;
@@ -164,7 +165,7 @@ namespace ElevatorSystem
                 }
                 if (isClosing)
                 {
-                    if (doorLeftU.Left < Elevator.Width+ doorMaxCLoseWidth / 2 - 80)  // Adjusted condition for closing
+                    if (doorLeftU.Left < Elevator.Width+ doorMaxCLoseWidth / 2 - 90)  // Adjusted condition for closing
                     {
                         doorLeftU.Left += doorSpeed;
                         doorRightU.Left -= doorSpeed;
