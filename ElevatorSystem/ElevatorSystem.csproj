@@ -168,5 +168,26 @@
   <ItemGroup>
     <None Include="Resources\Downbtn-removebg-preview.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BackGround.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\whitebg.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BlackWallpaper.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg1.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Silverwall.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Wallpaper22.jpeg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

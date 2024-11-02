@@ -45,8 +45,11 @@
             this.Elevator = new System.Windows.Forms.PictureBox();
             this.liftPanel = new System.Windows.Forms.PictureBox();
             this.LogHistoryView = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnLiftCallD = new System.Windows.Forms.Button();
+            this.btnLiftCallU = new System.Windows.Forms.Button();
+            this.btnColorU = new System.Windows.Forms.Button();
+            this.btnColorD = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.doorRightU)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.doorLeftU)).BeginInit();
@@ -91,7 +94,7 @@
             // 
             this.EmergencyAlarm.BackgroundImage = global::ElevatorSystem.Properties.Resources.siren;
             this.EmergencyAlarm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.EmergencyAlarm.Location = new System.Drawing.Point(759, 547);
+            this.EmergencyAlarm.Location = new System.Drawing.Point(777, 615);
             this.EmergencyAlarm.Name = "EmergencyAlarm";
             this.EmergencyAlarm.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.EmergencyAlarm.Size = new System.Drawing.Size(80, 69);
@@ -148,7 +151,7 @@
             this.btnClose.BackColor = System.Drawing.Color.DimGray;
             this.btnClose.BackgroundImage = global::ElevatorSystem.Properties.Resources.Close_btn;
             this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnClose.Location = new System.Drawing.Point(813, 448);
+            this.btnClose.Location = new System.Drawing.Point(815, 520);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(103, 70);
             this.btnClose.TabIndex = 5;
@@ -159,7 +162,7 @@
             // 
             this.btnOpen.BackgroundImage = global::ElevatorSystem.Properties.Resources.Open_btn;
             this.btnOpen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnOpen.Location = new System.Drawing.Point(679, 448);
+            this.btnOpen.Location = new System.Drawing.Point(695, 520);
             this.btnOpen.Name = "btnOpen";
             this.btnOpen.Size = new System.Drawing.Size(105, 70);
             this.btnOpen.TabIndex = 4;
@@ -172,7 +175,7 @@
             this.btnDown.BackColor = System.Drawing.Color.DimGray;
             this.btnDown.BackgroundImage = global::ElevatorSystem.Properties.Resources.Downbtn_removebg_preview;
             this.btnDown.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnDown.Location = new System.Drawing.Point(742, 296);
+            this.btnDown.Location = new System.Drawing.Point(745, 401);
             this.btnDown.Name = "btnDown";
             this.btnDown.Size = new System.Drawing.Size(112, 95);
             this.btnDown.TabIndex = 3;
@@ -184,7 +187,7 @@
             this.btnUp.BackColor = System.Drawing.Color.DimGray;
             this.btnUp.BackgroundImage = global::ElevatorSystem.Properties.Resources.UpButton_removebg_preview;
             this.btnUp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnUp.Location = new System.Drawing.Point(742, 158);
+            this.btnUp.Location = new System.Drawing.Point(745, 267);
             this.btnUp.Name = "btnUp";
             this.btnUp.Size = new System.Drawing.Size(112, 99);
             this.btnUp.TabIndex = 2;
@@ -195,9 +198,9 @@
             // 
             this.Elevator.BackgroundImage = global::ElevatorSystem.Properties.Resources.Elevator_room2;
             this.Elevator.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Elevator.Location = new System.Drawing.Point(185, 477);
+            this.Elevator.Location = new System.Drawing.Point(185, 484);
             this.Elevator.Name = "Elevator";
-            this.Elevator.Size = new System.Drawing.Size(279, 319);
+            this.Elevator.Size = new System.Drawing.Size(279, 312);
             this.Elevator.TabIndex = 1;
             this.Elevator.TabStop = false;
             // 
@@ -221,25 +224,52 @@
             this.LogHistoryView.TabIndex = 15;
             this.LogHistoryView.Text = "Lift History";
             // 
-            // button1
+            // btnLiftCallD
             // 
-            this.button1.BackColor = System.Drawing.Color.Green;
-            this.button1.Location = new System.Drawing.Point(470, 547);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(83, 43);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnLiftCallD.BackColor = System.Drawing.Color.Green;
+            this.btnLiftCallD.Location = new System.Drawing.Point(470, 547);
+            this.btnLiftCallD.Name = "btnLiftCallD";
+            this.btnLiftCallD.Size = new System.Drawing.Size(83, 43);
+            this.btnLiftCallD.TabIndex = 16;
+            this.btnLiftCallD.Text = "RequestFloorDown";
+            this.btnLiftCallD.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // btnLiftCallU
             // 
-            this.button2.BackColor = System.Drawing.Color.Green;
-            this.button2.Location = new System.Drawing.Point(470, 185);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(83, 45);
-            this.button2.TabIndex = 17;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnLiftCallU.BackColor = System.Drawing.Color.Green;
+            this.btnLiftCallU.Location = new System.Drawing.Point(470, 185);
+            this.btnLiftCallU.Name = "btnLiftCallU";
+            this.btnLiftCallU.Size = new System.Drawing.Size(83, 45);
+            this.btnLiftCallU.TabIndex = 17;
+            this.btnLiftCallU.Text = "RequestFloorUp";
+            this.btnLiftCallU.UseVisualStyleBackColor = false;
+            // 
+            // btnColorU
+            // 
+            this.btnColorU.BackColor = System.Drawing.Color.Black;
+            this.btnColorU.Location = new System.Drawing.Point(293, 30);
+            this.btnColorU.Name = "btnColorU";
+            this.btnColorU.Size = new System.Drawing.Size(76, 19);
+            this.btnColorU.TabIndex = 18;
+            this.btnColorU.UseVisualStyleBackColor = false;
+            // 
+            // btnColorD
+            // 
+            this.btnColorD.BackColor = System.Drawing.Color.Black;
+            this.btnColorD.Location = new System.Drawing.Point(293, 459);
+            this.btnColorD.Name = "btnColorD";
+            this.btnColorD.Size = new System.Drawing.Size(76, 19);
+            this.btnColorD.TabIndex = 19;
+            this.btnColorD.UseVisualStyleBackColor = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(754, 148);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(70, 25);
+            this.label1.TabIndex = 20;
+            this.label1.Text = "label1";
             // 
             // Form1
             // 
@@ -247,8 +277,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(1717, 832);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnColorD);
+            this.Controls.Add(this.btnColorU);
+            this.Controls.Add(this.btnLiftCallU);
+            this.Controls.Add(this.btnLiftCallD);
             this.Controls.Add(this.LogHistoryView);
             this.Controls.Add(this.EmergencyAlarm);
             this.Controls.Add(this.DeleteLog);
@@ -265,6 +298,7 @@
             this.Controls.Add(this.liftPanel);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.doorRightU)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.doorLeftU)).EndInit();
@@ -295,8 +329,11 @@
         private System.Windows.Forms.Button EmergencyAlarm;
         private System.Windows.Forms.Timer LiftTime;
         private System.Windows.Forms.Label LogHistoryView;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnLiftCallD;
+        private System.Windows.Forms.Button btnLiftCallU;
+        private System.Windows.Forms.Button btnColorU;
+        private System.Windows.Forms.Button btnColorD;
+        private System.Windows.Forms.Label label1;
     }
 }
 

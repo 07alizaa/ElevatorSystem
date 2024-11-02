@@ -14,20 +14,22 @@ namespace ElevatorSystem
         public PictureBox Elevator;
         public Button btnUp;
         public Button btnDown;
-        public int FormSize;
-        public int LiftSpeed;
-        public Timer LiftTimerUp;
-        public Timer LiftTimerDown;
+        public int formSize;
+        public int liftSpeed;
+        public Timer LiftTime;
+        public Timer doorTime;
+        public PictureBox doorLeftU;
 
-        public Lift(PictureBox mainElevator, Button btn_1, Button btn_G, int formSize, int liftSpeed, Timer liftTimerUp, Timer liftTimerDown)
+        public Lift(PictureBox Elevator, Button btnUp, Button btnDown, int formSize, int liftSpeed,Timer LiftTime,Timer doorTime, PictureBox doorLeftU)
         {
-            Elevator = mainElevator;
-            btnUp = btn_1;
-            btnDown = btn_G;
-            FormSize = formSize;
-            LiftSpeed = liftSpeed;
-            LiftTimerUp = liftTimerUp;
-            LiftTimerDown = liftTimerDown;
+            this.Elevator = Elevator;
+            this.btnUp = btnUp;
+            this.btnDown = btnDown;
+            this.formSize = formSize;
+            this.liftSpeed = liftSpeed;
+            this.LiftTime = LiftTime;
+            this.doorTime = doorTime;
+            this.doorLeftU = doorLeftU;
             _CurrentState = new IdleState();
         }
 

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,7 +20,9 @@ namespace ElevatorSystem
         bool isClosing = false;
         bool isOpening = false;
         int doorSpeed = 10;
-       // private int maxLiftHeight = 100;
+        private Lift lift;
+
+        // private int maxLiftHeight = 100;
 
         int doorMaxOpenWidth;
         int doorMaxCLoseWidth;
@@ -27,11 +30,13 @@ namespace ElevatorSystem
 
 
         DataTable dt = new DataTable();
-        DBContext db = new DBContext();  
+        DBContext db = new DBContext();
         public Form1()
         {
             InitializeComponent();
-            doorMaxOpenWidth = Elevator.Width / 2 -50;
+            //Elevator.Top =(this.ClientSize.Height-Elevator.Height);
+            lift = new Lift(Elevator, btnUp, btnDown, this.ClientSize.Height, liftSpeed, LiftTime, doorTime, doorLeftU);
+            doorMaxOpenWidth = Elevator.Width / 2 - 50;
             doorMaxCLoseWidth = Elevator.Width / 2;
             _emergencyAlarm = new EmergencyAlarm(alarmSoundPath);
             dataGridView1.ColumnCount = 2;
@@ -46,7 +51,7 @@ namespace ElevatorSystem
             string currentTime = DateTime.Now.ToString("hh:mm:ss");
             dt.Rows.Add(currentTime, message);
             dataGridView1.Rows.Add(currentTime, message);
-            db.InsertLogsIntoDB(dt);  
+            db.InsertLogsIntoDB(dt);
         }
 
         private void btn_Open_Click(object sender, EventArgs e)
@@ -61,65 +66,145 @@ namespace ElevatorSystem
         {
             isOpening = false;
             isClosing = true;
+
             doorTime.Start();
             btnOpen.Enabled = false;
             dataEvents("Lift is closing...");
         }
         public void btnUp_Click(object sender, EventArgs e)
         {
+            //isMovingUp = true;
+            //isMovingDown = false;
+            //lift.SetState(new MovingUpState());
+            //lift.LiftTime.Start();
+            //btnUp.Enabled = false;
+            //dataEvents("Lift is going up");
+            //btnColorU.BackColor = Color.Green;
+            //btnColorD.BackColor = Color.Gray;
+
+            if (isOpening)
+            {
+                isOpening = false;
+                isClosing = true;
+                doorTime.Start();
+                btnOpen.Enabled = false;
+                doorTime.Tick += onDoorC;
+                dataEvents("Lift is going up");
+
+            }
+            else
+            {
+                MoveLiftUp();
+            }
+
+        }
+
+        private void onDoorC(object sender, EventArgs e)
+        {
+            if (!isOpening && !isClosing)
+            {
+                MoveLiftUp();
+                doorTime.Tick -= onDoorC;
+            }
+            else
+            {
+                MoveLiftUp();
+
+            }
+        }
+
+        private void MoveLiftUp()
+        {
             isMovingUp = true;
             isMovingDown = false;
-            LiftTime.Start();
-            btnUp.Enabled = false;
-            dataEvents("Lift is going up");
+            lift.SetState(new MovingUpState());
+            lift.LiftTime.Start();
+            btnUp.Enabled = true;
+
+            btnColorU.BackColor = Color.Green;
+            btnColorD.BackColor = Color.Gray;
         }
+
         public void btnDown_Click(object sender, EventArgs e)
+        {
+            //isMovingUp = false;
+            //isMovingDown = true;
+            //lift.SetState(new MovingDownState());
+            //lift.LiftTime.Start();
+            //btnDown.Enabled = false;
+            //dataEvents("Lift is going down");
+            //btnColorU.BackColor = Color.Gray; 
+            //btnColorD.BackColor = Color.Red;
+            if (isOpening)
+            {
+                isOpening = false;
+                isClosing = true;
+                doorTime.Start();
+                btnOpen.Enabled = false;
+                doorTime.Tick += onDoorC;
+                dataEvents("Lift is going down");
+
+            }
+            else
+            {
+                MoveLiftDown();
+            }
+
+        }
+        private void MoveLiftDown()
         {
             isMovingUp = false;
             isMovingDown = true;
-            LiftTime.Start();
+            lift.SetState(new MovingDownState());
+            lift.LiftTime.Start();
             btnDown.Enabled = false;
-            dataEvents("Lift is going down");
+
+            btnColorU.BackColor = Color.Gray;
+            btnColorD.BackColor = Color.Red;
         }
         public void lifttimer_Tick(object sender, EventArgs e)
         {
-            if (isMovingUp)
-            {
-                btnDown.BackColor = Color.LightBlue;
-                if (Elevator.Top > 0)
-                {
-                    Elevator.Top -= liftSpeed;
-                }
-                else
-                {
-                    LiftTime.Stop();
-                    Elevator.Top = 0;
-                    btnUp.Enabled = true;
-                }
-            }
-            if (isMovingDown)
-            {
-                btnDown.BackColor = Color.Gray;
-                btnUp.BackColor = Color.LightGreen;
-                if (Elevator.Bottom < this.ClientSize.Height)
-                {
-                    Elevator.Top += liftSpeed;
-                }
-                else
-                {
-                    LiftTime.Stop();
-                    btnDown.Enabled = true;
-                }
-            }
+            lift.MovingUp();
+            lift.MovingDown();
+            //LiftStopTop();
+            //if (isMovingUp)
+            //{
+            //    btnDown.BackColor = Color.LightBlue;
+            //    if (Elevator.Top > 0)
+            //    {
+            //        Elevator.Top -= liftSpeed;
+            //    }
+            //    else
+            //    {
+            //        LiftTime.Stop();
+            //        Elevator.Top = 0;
+            //        btnUp.Enabled = true;
+            //    }
+            //}
+            //if (isMovingDown)
+            //{
+            //    btnDown.BackColor = Color.Gray;
+            //    btnUp.BackColor = Color.LightGreen;
+            //    if (Elevator.Bottom < this.ClientSize.Height)
+            //    {
+            //        Elevator.Top += liftSpeed;
+            //    }
+            //    else
+            //    {
+            //        LiftTime.Stop();
+            //        btnDown.Enabled = true;
+            //    }
+            //}
         }
         private void door_timer_Tick(object sender, EventArgs e)
         {
-            if (Elevator.Top != 0)
+            if (Elevator.Top != doorLeftU.Location.Y)
+            //if(Elevator.Top==(this.ClientSize.Height-Elevator.Height))
             {
                 // When the elevator is not on the top floor
                 if (isOpening)
                 {
-                    if (doorLeftG.Left > doorMaxOpenWidth+20)
+                    if (doorLeftG.Left > doorMaxOpenWidth + 20)
                     {
                         doorLeftG.Left -= doorSpeed;
                         doorRightG.Left += doorSpeed;
@@ -133,7 +218,7 @@ namespace ElevatorSystem
                 }
                 if (isClosing)
                 {
-                    if (doorLeftG.Left < Elevator.Width +  doorMaxOpenWidth/2 - 60)  // Adjusted condition for closing
+                    if (doorLeftG.Left < Elevator.Width + doorMaxOpenWidth / 2 - 60)  // Adjusted condition for closing
                     {
                         doorLeftG.Left += doorSpeed;
                         doorRightG.Left -= doorSpeed;
@@ -146,12 +231,12 @@ namespace ElevatorSystem
                     }
                 }
             }
-            else
+            else //if(Elevator.Top==0)
             {
                 // When the elevator is on the top floor
                 if (isOpening)
                 {
-                    if (doorLeftU.Left > doorMaxOpenWidth+40)
+                    if (doorLeftU.Left > doorMaxOpenWidth + 40)
                     {
                         doorLeftU.Left -= doorSpeed;
                         doorRightU.Left += doorSpeed;
@@ -165,7 +250,7 @@ namespace ElevatorSystem
                 }
                 if (isClosing)
                 {
-                    if (doorLeftU.Left < Elevator.Width+ doorMaxCLoseWidth / 2 - 90)  // Adjusted condition for closing
+                    if (doorLeftU.Left < Elevator.Width + doorMaxCLoseWidth / 2 - 90)  // Adjusted condition for closing
                     {
                         doorLeftU.Left += doorSpeed;
                         doorRightU.Left -= doorSpeed;
@@ -191,15 +276,33 @@ namespace ElevatorSystem
             dataGridView1.Rows.Clear();
         }
 
+        //private void LiftStopTop()
+        //{
+        //    isOpening = true;
+        //    isClosing = false;
+        //    doorTime.Start();
+        //    btnClose.Enabled = false;
+        //    lift.MovingUp();
+        //    if(isClosing)
+        //    {
+        //        isOpening = true;
+        //        isClosing=false;
+        //        doorTime.Start();
+        //    }
+        //}
+
+
         private void EmergencyAlarm_Click(object sender, EventArgs e)
         {
             if (!_emergencyAlarm.IsActive)
             {
                 _emergencyAlarm.Activate();
+                dataEvents("alaram is ringing");
             }
             else
             {
                 _emergencyAlarm.Deactivate();
+                dataEvents("alaram s");
             }
 
         }
