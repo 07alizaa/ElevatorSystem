@@ -63,7 +63,7 @@
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.Color.Snow;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(954, 78);
+            this.dataGridView1.Location = new System.Drawing.Point(997, 78);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 82;
             this.dataGridView1.RowTemplate.Height = 33;
@@ -73,7 +73,7 @@
             // DeleteLog
             // 
             this.DeleteLog.BackColor = System.Drawing.Color.Firebrick;
-            this.DeleteLog.Location = new System.Drawing.Point(954, 547);
+            this.DeleteLog.Location = new System.Drawing.Point(997, 547);
             this.DeleteLog.Name = "DeleteLog";
             this.DeleteLog.Size = new System.Drawing.Size(135, 63);
             this.DeleteLog.TabIndex = 11;
@@ -94,7 +94,7 @@
             // 
             this.EmergencyAlarm.BackgroundImage = global::ElevatorSystem.Properties.Resources.siren;
             this.EmergencyAlarm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.EmergencyAlarm.Location = new System.Drawing.Point(777, 615);
+            this.EmergencyAlarm.Location = new System.Drawing.Point(759, 624);
             this.EmergencyAlarm.Name = "EmergencyAlarm";
             this.EmergencyAlarm.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.EmergencyAlarm.Size = new System.Drawing.Size(80, 69);
@@ -207,7 +207,7 @@
             // liftPanel
             // 
             this.liftPanel.BackgroundImage = global::ElevatorSystem.Properties.Resources.Pannel1;
-            this.liftPanel.Location = new System.Drawing.Point(663, 30);
+            this.liftPanel.Location = new System.Drawing.Point(671, 47);
             this.liftPanel.Name = "liftPanel";
             this.liftPanel.Size = new System.Drawing.Size(277, 733);
             this.liftPanel.TabIndex = 0;
@@ -218,7 +218,7 @@
             this.LogHistoryView.AutoSize = true;
             this.LogHistoryView.BackColor = System.Drawing.Color.IndianRed;
             this.LogHistoryView.Font = new System.Drawing.Font("Britannic Bold", 16.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LogHistoryView.Location = new System.Drawing.Point(956, 30);
+            this.LogHistoryView.Location = new System.Drawing.Point(989, 30);
             this.LogHistoryView.Name = "LogHistoryView";
             this.LogHistoryView.Size = new System.Drawing.Size(230, 48);
             this.LogHistoryView.TabIndex = 15;
@@ -229,19 +229,19 @@
             this.btnLiftCallD.BackColor = System.Drawing.Color.Green;
             this.btnLiftCallD.Location = new System.Drawing.Point(470, 547);
             this.btnLiftCallD.Name = "btnLiftCallD";
-            this.btnLiftCallD.Size = new System.Drawing.Size(83, 43);
+            this.btnLiftCallD.Size = new System.Drawing.Size(98, 92);
             this.btnLiftCallD.TabIndex = 16;
-            this.btnLiftCallD.Text = "RequestFloorDown";
             this.btnLiftCallD.UseVisualStyleBackColor = false;
+            this.btnLiftCallD.Click += new System.EventHandler(this.btnCallLiftD_Click);
             // 
             // btnLiftCallU
             // 
             this.btnLiftCallU.BackColor = System.Drawing.Color.Green;
+            this.btnLiftCallU.ForeColor = System.Drawing.SystemColors.ActiveBorder;
             this.btnLiftCallU.Location = new System.Drawing.Point(470, 185);
             this.btnLiftCallU.Name = "btnLiftCallU";
-            this.btnLiftCallU.Size = new System.Drawing.Size(83, 45);
+            this.btnLiftCallU.Size = new System.Drawing.Size(98, 95);
             this.btnLiftCallU.TabIndex = 17;
-            this.btnLiftCallU.Text = "RequestFloorUp";
             this.btnLiftCallU.UseVisualStyleBackColor = false;
             // 
             // btnColorU
@@ -276,6 +276,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
+            this.BackgroundImage = global::ElevatorSystem.Properties.Resources.whitebg;
             this.ClientSize = new System.Drawing.Size(1717, 832);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnColorD);
@@ -297,7 +298,6 @@
             this.Controls.Add(this.Elevator);
             this.Controls.Add(this.liftPanel);
             this.Name = "Form1";
-            this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.doorRightU)).EndInit();
