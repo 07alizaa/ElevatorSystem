@@ -22,6 +22,10 @@ namespace ElevatorSystem
                 lift.Elevator.Top = lift.formSize - lift.Elevator.Height;
                 lift.btnUp.BackColor = Color.White;
                 lift.LiftTime.Stop();  // Stop the timer when it reaches the bottom
+
+                lift.OpenGroundFloorDoors();
+                lift.Display.Text = "Arrived at Floor: G";
+
                 lift.btnUp.Enabled = true;  // Re-enable the 1st floor button
                 lift.btnDown.Enabled = true;  // Enable other controls
             }

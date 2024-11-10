@@ -10,5 +10,6 @@ namespace ElevatorSystem
     {
         void MovingUp(Lift lift);
         void MovingDown(Lift lift);
+        
     }
 }

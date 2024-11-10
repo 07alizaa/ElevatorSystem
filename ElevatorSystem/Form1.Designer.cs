@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.DeleteLog = new System.Windows.Forms.Button();
-            this.doorTime = new System.Windows.Forms.Timer(this.components);
             this.LiftTime = new System.Windows.Forms.Timer(this.components);
             this.EmergencyAlarm = new System.Windows.Forms.Button();
             this.doorRightU = new System.Windows.Forms.PictureBox();
@@ -49,7 +48,10 @@
             this.btnLiftCallU = new System.Windows.Forms.Button();
             this.btnColorU = new System.Windows.Forms.Button();
             this.btnColorD = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.displayFloor = new System.Windows.Forms.Label();
+            this.display = new System.Windows.Forms.Label();
+            this.OpenTimer = new System.Windows.Forms.Timer(this.components);
+            this.CloseTimer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.doorRightU)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.doorLeftU)).BeginInit();
@@ -61,29 +63,29 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.BackgroundColor = System.Drawing.Color.Snow;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(997, 78);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 82;
             this.dataGridView1.RowTemplate.Height = 33;
-            this.dataGridView1.Size = new System.Drawing.Size(694, 463);
+            this.dataGridView1.Size = new System.Drawing.Size(694, 458);
             this.dataGridView1.TabIndex = 10;
             // 
             // DeleteLog
             // 
-            this.DeleteLog.BackColor = System.Drawing.Color.Firebrick;
-            this.DeleteLog.Location = new System.Drawing.Point(997, 547);
+            this.DeleteLog.BackColor = System.Drawing.Color.DodgerBlue;
+            this.DeleteLog.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DeleteLog.Location = new System.Drawing.Point(997, 527);
             this.DeleteLog.Name = "DeleteLog";
-            this.DeleteLog.Size = new System.Drawing.Size(135, 63);
+            this.DeleteLog.Size = new System.Drawing.Size(176, 63);
             this.DeleteLog.TabIndex = 11;
             this.DeleteLog.Text = "ClearData";
             this.DeleteLog.UseVisualStyleBackColor = false;
             this.DeleteLog.Click += new System.EventHandler(this.btn_DeleteLog_Click);
-            // 
-            // doorTime
-            // 
-            this.doorTime.Tick += new System.EventHandler(this.door_timer_Tick);
             // 
             // LiftTime
             // 
@@ -209,40 +211,45 @@
             this.liftPanel.BackgroundImage = global::ElevatorSystem.Properties.Resources.Pannel1;
             this.liftPanel.Location = new System.Drawing.Point(671, 47);
             this.liftPanel.Name = "liftPanel";
-            this.liftPanel.Size = new System.Drawing.Size(277, 733);
+            this.liftPanel.Size = new System.Drawing.Size(282, 733);
             this.liftPanel.TabIndex = 0;
             this.liftPanel.TabStop = false;
             // 
             // LogHistoryView
             // 
             this.LogHistoryView.AutoSize = true;
-            this.LogHistoryView.BackColor = System.Drawing.Color.IndianRed;
-            this.LogHistoryView.Font = new System.Drawing.Font("Britannic Bold", 16.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LogHistoryView.Location = new System.Drawing.Point(989, 30);
+            this.LogHistoryView.BackColor = System.Drawing.Color.Gold;
+            this.LogHistoryView.Font = new System.Drawing.Font("Arial Rounded MT Bold", 16.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LogHistoryView.Location = new System.Drawing.Point(1002, 30);
             this.LogHistoryView.Name = "LogHistoryView";
-            this.LogHistoryView.Size = new System.Drawing.Size(230, 48);
+            this.LogHistoryView.Size = new System.Drawing.Size(251, 50);
             this.LogHistoryView.TabIndex = 15;
             this.LogHistoryView.Text = "Lift History";
             // 
             // btnLiftCallD
             // 
-            this.btnLiftCallD.BackColor = System.Drawing.Color.Green;
-            this.btnLiftCallD.Location = new System.Drawing.Point(470, 547);
+            this.btnLiftCallD.BackColor = System.Drawing.Color.DimGray;
+            this.btnLiftCallD.BackgroundImage = global::ElevatorSystem.Properties.Resources.Downbtn_removebg_preview;
+            this.btnLiftCallD.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnLiftCallD.Location = new System.Drawing.Point(520, 569);
             this.btnLiftCallD.Name = "btnLiftCallD";
-            this.btnLiftCallD.Size = new System.Drawing.Size(98, 92);
+            this.btnLiftCallD.Size = new System.Drawing.Size(58, 55);
             this.btnLiftCallD.TabIndex = 16;
             this.btnLiftCallD.UseVisualStyleBackColor = false;
             this.btnLiftCallD.Click += new System.EventHandler(this.btnCallLiftD_Click);
             // 
             // btnLiftCallU
             // 
-            this.btnLiftCallU.BackColor = System.Drawing.Color.Green;
+            this.btnLiftCallU.BackColor = System.Drawing.Color.Gray;
+            this.btnLiftCallU.BackgroundImage = global::ElevatorSystem.Properties.Resources.UpButton_removebg_preview;
+            this.btnLiftCallU.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnLiftCallU.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btnLiftCallU.Location = new System.Drawing.Point(470, 185);
+            this.btnLiftCallU.Location = new System.Drawing.Point(520, 224);
             this.btnLiftCallU.Name = "btnLiftCallU";
-            this.btnLiftCallU.Size = new System.Drawing.Size(98, 95);
+            this.btnLiftCallU.Size = new System.Drawing.Size(58, 56);
             this.btnLiftCallU.TabIndex = 17;
             this.btnLiftCallU.UseVisualStyleBackColor = false;
+            this.btnLiftCallU.Click += new System.EventHandler(this.btnLiftCallU_Click);
             // 
             // btnColorU
             // 
@@ -262,23 +269,41 @@
             this.btnColorD.TabIndex = 19;
             this.btnColorD.UseVisualStyleBackColor = false;
             // 
-            // label1
+            // displayFloor
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(754, 148);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 25);
-            this.label1.TabIndex = 20;
-            this.label1.Text = "label1";
+            this.displayFloor.AutoSize = true;
+            this.displayFloor.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.displayFloor.Location = new System.Drawing.Point(709, 99);
+            this.displayFloor.Name = "displayFloor";
+            this.displayFloor.Size = new System.Drawing.Size(0, 79);
+            this.displayFloor.TabIndex = 20;
+            // 
+            // display
+            // 
+            this.display.AutoSize = true;
+            this.display.Font = new System.Drawing.Font("Arial Rounded MT Bold", 16.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.display.Location = new System.Drawing.Point(584, 99);
+            this.display.Name = "display";
+            this.display.Size = new System.Drawing.Size(305, 50);
+            this.display.TabIndex = 21;
+            this.display.Text = "Current Floor";
+            // 
+            // OpenTimer
+            // 
+            this.OpenTimer.Tick += new System.EventHandler(this.OpenTimer_Tick);
+            // 
+            // CloseTimer
+            // 
+            this.CloseTimer.Tick += new System.EventHandler(this.CloseTimer_Tick);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
-            this.BackgroundImage = global::ElevatorSystem.Properties.Resources.whitebg;
-            this.ClientSize = new System.Drawing.Size(1717, 832);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(1828, 827);
+            this.Controls.Add(this.display);
+            this.Controls.Add(this.displayFloor);
             this.Controls.Add(this.btnColorD);
             this.Controls.Add(this.btnColorU);
             this.Controls.Add(this.btnLiftCallU);
@@ -325,7 +350,6 @@
         private System.Windows.Forms.PictureBox doorRightU;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button DeleteLog;
-        private System.Windows.Forms.Timer doorTime;
         private System.Windows.Forms.Button EmergencyAlarm;
         private System.Windows.Forms.Timer LiftTime;
         private System.Windows.Forms.Label LogHistoryView;
@@ -333,7 +357,10 @@
         private System.Windows.Forms.Button btnLiftCallU;
         private System.Windows.Forms.Button btnColorU;
         private System.Windows.Forms.Button btnColorD;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label displayFloor;
+        private System.Windows.Forms.Label display;
+        private System.Windows.Forms.Timer OpenTimer;
+        private System.Windows.Forms.Timer CloseTimer;
     }
 }
 

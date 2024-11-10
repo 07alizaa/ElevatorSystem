@@ -17,19 +17,32 @@ namespace ElevatorSystem
         public int formSize;
         public int liftSpeed;
         public Timer LiftTime;
-        public Timer doorTime;
         public PictureBox doorLeftU;
+        public Form1 form;
+       
 
-        public Lift(PictureBox Elevator, Button btnUp, Button btnDown, int formSize, int liftSpeed,Timer LiftTime,Timer doorTime, PictureBox doorLeftU)
+        public int topFloorY;
+        public int groundFloorY;
+        public Timer opentimer;
+        public Timer closetimer;
+        public Label Display;
+        public Lift(Form1 form,PictureBox Elevator, Button btnUp, Button btnDown, int formSize, int liftSpeed,Timer LiftTime, PictureBox doorLeftU, int topFloorY, int groundFloorY, Timer OpenTimer, Timer CloseTimer, Label display)
         {
+            this.form = form;
             this.Elevator = Elevator;
             this.btnUp = btnUp;
             this.btnDown = btnDown;
             this.formSize = formSize;
             this.liftSpeed = liftSpeed;
             this.LiftTime = LiftTime;
-            this.doorTime = doorTime;
             this.doorLeftU = doorLeftU;
+            this.topFloorY = topFloorY;
+            this.groundFloorY = groundFloorY;
+            this.opentimer = OpenTimer;
+            this.closetimer = CloseTimer;
+            this.Display = display;
+         
+
             _CurrentState = new IdleState();
         }
 
@@ -48,6 +61,25 @@ namespace ElevatorSystem
             _CurrentState.MovingDown(this);
         }
 
+        public void OpenGroundFloorDoors()
+        {
+            opentimer.Start(); // Opens the ground floor door
+        }
+
+        public void CloseGroundFloorDoors()
+        {
+            closetimer.Start(); // Closes the ground floor door
+        }
+
+        public void OpenTopFloorDoors()
+        {
+            opentimer.Start(); // Opens the top floor door
+        }
+
+        public void CloseTopFloorDoors()
+        {
+            closetimer.Start(); // Closes the top floor door
+        }
 
     }
 }
